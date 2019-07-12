@@ -1,0 +1,15 @@
+﻿<panaceaLib1:SingleInstanceApp
+    xmlns:panaceaLib1="clr-namespace:System.Windows.ApplicationExtensions;assembly=System.Windows.ApplicationExtensions"
+    x:Class="PanaceaLauncher.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    DispatcherUnhandledException="App_OnDispatcherUnhandledException"
+    Startup="App_OnStartup">
+    <panaceaLib1:SingleInstanceApp.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+               
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </panaceaLib1:SingleInstanceApp.Resources>
+</panaceaLib1:SingleInstanceApp>
