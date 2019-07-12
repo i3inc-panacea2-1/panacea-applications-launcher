@@ -149,7 +149,7 @@ namespace PanaceaLauncher
                     {
 	                    try
 	                    {
-		                    await Task.Delay(10000);
+		                    await Task.Delay(1000);
 
 		                    if (!Enabled) continue;
 
@@ -181,7 +181,7 @@ namespace PanaceaLauncher
                                                    select $"{app}: {string.Join(", ", process.Modules)}");
                                     Log(
 					                    $"No application found for group '{group}'. Launching default '{appsToCheck[@group][""]}'. {string.Join(Environment.NewLine, modules)}", EventLogEntryType.Warning);
-				                    Process.Start(Common.Path() + "../../../" + appsToCheck[group][""]);
+				                    Process.Start(Common.Path() + "../../" + appsToCheck[group][""]);
 			                    }
 			                    catch (Exception ex)
 			                    {
