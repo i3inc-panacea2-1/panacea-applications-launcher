@@ -149,7 +149,7 @@ namespace PanaceaLauncher
                     {
 	                    try
 	                    {
-		                    await Task.Delay(1000);
+		                    await Task.Delay(1200);
 
 		                    if (!Enabled) continue;
 
@@ -200,7 +200,6 @@ namespace PanaceaLauncher
             {
                 //closed
             }
-
         }
 
         void ShowUI()
