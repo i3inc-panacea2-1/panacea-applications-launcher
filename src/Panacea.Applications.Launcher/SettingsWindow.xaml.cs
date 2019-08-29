@@ -94,7 +94,30 @@ namespace PanaceaLauncher
         {
             App.UnLockFileSystem();
         }
-
+        private void Powershell_OnClick(object sender, RoutedEventArgs e)
+        {
+            try { Process.Start("powershell.exe"); }
+            catch { }
+        }
+        public bool Is64bit { get; set; } = System.Environment.Is64BitOperatingSystem;
+        private void Cmd64_OnClick(object sender, RoutedEventArgs e)
+        {
+            string sysNativePath = Environment.ExpandEnvironmentVariables(@"%windir%\Sysnative\cmd.exe");
+            if (System.IO.File.Exists(sysNativePath))
+            {
+                try { Process.Start(sysNativePath); }
+                catch { }
+            }
+        }
+        private void Powershell64_OnClick(object sender, RoutedEventArgs e)
+        {
+            string sysNativePath = Environment.ExpandEnvironmentVariables(@"%windir%\Sysnative\WindowsPowerShell\v1.0\powershell.exe");
+            if (System.IO.File.Exists(sysNativePath))
+            {
+                try { Process.Start(sysNativePath); }
+                catch { }
+            }
+        }
         private async void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
             try

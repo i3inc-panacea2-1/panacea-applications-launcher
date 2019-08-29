@@ -1,9 +1,13 @@
 ﻿<Window x:Class="PanaceaLauncher.SettingsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:PanaceaLauncher"
         Title="Launcher" Closing="SettingsWindow_OnClosing"  SizeToContent="WidthAndHeight"
         WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ShowInTaskbar="True" Topmost="True" 
                       BorderThickness="0"  Loaded="MetroWindow_Loaded">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -23,6 +27,20 @@
             <Button Name="UnlockButton" Content="Unlock FS" Click="UnlockButton_OnClick"></Button>
             <Button Name="SystemSetup" Content="System Setup" Click="SystemSetup_OnClick"></Button>
             <Button Name="Cmd" Content="Cmd" Click="Cmd_OnClick"></Button>
+            <Button
+                Name="Powershell"
+                Click="Powershell_OnClick"
+                Content="Powershell" />
+            <Button
+                Name="Cmd64"
+                Click="Cmd64_OnClick"
+                Content="Cmd x64"
+                Visibility="{Binding Is64bit, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:SettingsWindow}}}" />
+            <Button
+                Name="Powershell64"
+                Click="Powershell64_OnClick"
+                Content="Powershell x64"
+                Visibility="{Binding Is64bit, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:SettingsWindow}}}" />
         </UniformGrid>
     </Grid>
 
